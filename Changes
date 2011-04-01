@@ -1,4 +1,8 @@
 Revision history for Perl extension Data::Deduper
 
+0.02    
+        - add example
+        - fix pod
+
 0.01    Fri, 01 Apr 2011
         - original version

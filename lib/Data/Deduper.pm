@@ -1,7 +1,7 @@
 package Data::Deduper;
 use strict;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my $class = shift;
@@ -82,16 +82,16 @@ Creates a deduper instance.
 $expr is specified as expr of grep. $size mean max size of array. $data is
 initial array.
 
-=head2 C<< $deduper->init( @data ) >>
+=head2 C<< $deduper->init( \@data ) >>
 
 Reset items. return whole items.
 
-=head2 C<< $deduper->deup( @data ) >>
+=head2 C<< $deduper->deup( \@data ) >>
 
 Dedup items. each item in @data will be checked whether is duplicate item. And if the item is not duplicated, it add to the items.
 Return items added only. Note that return ignore duplicated items.
 
-=head2 C<< $deduper->data >>
+=head2 C<< $deduper->data() >>
 
 Return whole items.
 
