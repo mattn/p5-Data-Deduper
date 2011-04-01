@@ -1,7 +1,6 @@
 package Data::Deduper;
 use strict;
 use warnings;
-use YAML;
 
 sub new {
     my $class = shift;
