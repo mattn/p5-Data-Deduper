@@ -62,8 +62,12 @@ Data::Deduper - remove duplicated item from array
         size => 3,
         data => \@data,
     );
-    # show 2 3 4
-    for ($dd->dedup(3, 4) {
+    # show only 4. because 4 is newer.
+    for ($dd->dedup(3, 4)) {
+        print $_;
+    }
+    # show 2 3 4 in whole items. max size of items is 3.
+    for ($dd->data) {
         print $_;
     }
 
@@ -81,17 +85,16 @@ initial array.
 
 =head2 C<< $deduper->init( @data ) >>
 
-Reset items. 
+Reset items. return whole items.
 
 =head2 C<< $deduper->deup( @data ) >>
 
-Dedup items. each item in @data will be checked whether is duplicate item. 
+Dedup items. each item in @data will be checked whether is duplicate item. And if the item is not duplicated, it add to the items.
+Return items added only. Note that return ignore duplicated items.
 
 =head2 C<< $deduper->data >>
 
-Return items.
-
-dedup items. each item in @data will be checked whether is duplicate item. 
+Return whole items.
 
 =head1 AUTHOR
 
