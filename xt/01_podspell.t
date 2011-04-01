@@ -8,3 +8,6 @@ __DATA__
 Yasuhiro Matsumoto
 mattn.jp@gmail.com
 Data::Deduper
+Dedup
+deduper
+expr

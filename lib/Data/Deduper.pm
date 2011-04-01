@@ -73,7 +73,7 @@ Data::Deduper - remove duplicated item from array
 
 =head1 DESCRIPTION
 
-Data::Deduper removes duplicaetd items in array. This is useful for fetching RSS/Atom feed continual.
+Data::Deduper removes duplicated items in array. This is useful for fetching RSS/Atom feed continual.
 
 =head1 INTERFACE
 
