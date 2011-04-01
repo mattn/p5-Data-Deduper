@@ -6,10 +6,6 @@ use Data::Deduper;
 my @data = (1, 2, 3);
 
 my $dd = Data::Deduper->new(
-	expr => sub {
-			my ($a, $b) = @_;
-			$a eq $b;
-		},
 	size => 3,
 	data => \@data,
 );
