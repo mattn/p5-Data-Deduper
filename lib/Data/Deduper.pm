@@ -29,10 +29,9 @@ sub dedup {
     my @data  = @{ $self->{data} };
     my @ret;
     for my $a (@newer) {
-        unless ( grep { $self->{expr}( $_, $a ) } @data ) {
-            push @data, $a;
-            push @ret,  $a;
-        }
+        next if grep { $self->{expr}( $_, $a ) } @data );
+        push @data, $a;
+        push @ret,  $a;
     }
     my $count = @data;
     my $size  = $self->{size};
