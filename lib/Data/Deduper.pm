@@ -29,7 +29,7 @@ sub dedup {
     my @data  = @{ $self->{data} };
     my @ret;
     for my $a (@newer) {
-        next if grep { $self->{expr}( $_, $a ) } @data );
+        next if grep { $self->{expr}( $_, $a ) } @data;
         push @data, $a;
         push @ret,  $a;
     }
