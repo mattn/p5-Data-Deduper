@@ -54,6 +54,10 @@ Data::Deduper - remove duplicated item from array
         size => 3,
         data => \@data,
     );
+    # show 2 3 4
+    for ($dd->dedup(3, 4) {
+        print $_;
+    }
 
 =head1 DESCRIPTION
 
