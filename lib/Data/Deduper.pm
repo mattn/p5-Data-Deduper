@@ -15,8 +15,8 @@ sub new {
 }
 
 sub init {
-    my $self = shift;
-    my @ret = ( @_ == 1 ? @{ $_[0] } : @_ );
+    my $self  = shift;
+    my @ret   = ( @_ == 1 ? @{ $_[0] } : @_ );
     my $count = @ret;
     my $size  = $self->{size};
     @ret = @ret[ ( $count - $size ) .. $count - 1 ] if $count > $size;
@@ -24,18 +24,26 @@ sub init {
 }
 
 sub dedup {
-    my $self = shift;
-    my @data = ( @_ == 1 ? @{ $_[0] } : @_ );
-    my @ret  = @{ $self->{data} };
-    for my $a (@data) {
-        unless ( grep { $self->{expr}( $_, $a ) } @ret ) {
-            push @ret, $a;
+    my $self  = shift;
+    my @newer = ( @_ == 1 ? @{ $_[0] } : @_ );
+    my @data  = @{ $self->{data} };
+    my @ret;
+    for my $a (@newer) {
+        unless ( grep { $self->{expr}( $_, $a ) } @data ) {
+            push @data, $a;
+            push @ret,  $a;
         }
     }
-    my $count = @ret;
+    my $count = @data;
     my $size  = $self->{size};
-    @ret = @ret[ ( $count - $size ) .. $count - 1 ] if $count > $size;
-    @{ $self->{data} = \@ret };
+    @data = @data[ ( $count - $size ) .. $count - 1 ] if $count > $size;
+    $self->{data} = \@data;
+    @ret;
+}
+
+sub data {
+    my $self  = shift;
+    @{ $self->{data} };
 }
 
 1;
@@ -73,9 +81,15 @@ initial array.
 
 =head2 C<< $deduper->init( @data ) >>
 
-reset items. 
+Reset items. 
 
 =head2 C<< $deduper->deup( @data ) >>
+
+Dedup items. each item in @data will be checked whether is duplicate item. 
+
+=head2 C<< $deduper->data >>
+
+Return items.
 
 dedup items. each item in @data will be checked whether is duplicate item. 
 
