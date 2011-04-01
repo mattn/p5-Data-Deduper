@@ -2,7 +2,6 @@
 use strict;
 use warnings;
 use Data::Deduper;
-use Encode;
 use XML::Feed;
 
 my $uri = "http://api.twitter.com/1/statuses/public_timeline.rss";
