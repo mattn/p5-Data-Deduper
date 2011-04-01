@@ -14,5 +14,5 @@ my $dd = Data::Deduper->new(
 	data => \@data,
 );
 
-is($dd->dedup(3,4,5), (4,5))
-is($dd->data, (3,4,5))
+is_deepy($dd->dedup(3,4,5), (4,5), 'dedup');
+is_deepy($dd->data, (3,4,5), 'data');
