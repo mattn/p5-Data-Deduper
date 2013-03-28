@@ -1,13 +1,11 @@
 Revision history for Perl extension Data::Deduper
 
 {{$NEXT}}
-
-0.03 2013-03-28T08:46:51Z
         - minilize
 
-0.02    
+0.02    Nov Fri 23 23:49:00 2012
         - add example
         - fix pod
 
-0.01    Fri, 01 Apr 2011
+0.01    Apr Fri 01 00:00:00 2011
         - original version
