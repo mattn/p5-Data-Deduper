@@ -37,10 +37,9 @@
       },
       "homepage" : "https://github.com/mattn/p5-Data-Deduper",
       "repository" : {
-         "type" : "git",
-         "url" : "git://github.com/mattn/p5-Data-Deduper.git",
+         "url" : "https://github.com/mattn/p5-Data-Deduper",
          "web" : "https://github.com/mattn/p5-Data-Deduper"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
